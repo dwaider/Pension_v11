@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp" >
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pcalc_procent_for_ischisl_pensi"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/PCalcTextView"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pcalc_procent_for_pensi"
+                android:textSize="@dimen/shrift_size" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <Spinner
+                android:id="@+id/spProcentForPensi"
+                style="@style/PCalcTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/PCalcTextView"
+                android:text="@string/pcalc_nadb_raion_koeff_1"
+                 />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <Spinner
+                android:id="@+id/spNadbRaionKoeff"
+                style="@style/PCalcTextView"
+                android:layout_weight="1"
+                android:gravity="center_vertical" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pcalc_nadbavki"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextView02"
+                style="@style/PCalcTextView"
+                android:layout_weight="1"
+                android:text="@string/pcalc_nadb_17B_text"
+                android:textSize="@dimen/shrift_size" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <Spinner
+                android:id="@+id/spIgdevency"
+                style="@style/PCalcTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <CheckBox
+                android:id="@+id/chVetBoevDest"
+                style="@style/PCalcTextView"
+                android:layout_marginLeft="@dimen/table_margin"
+                android:text="@string/pcalc_nadb_vet_war"
+                android:textSize="@dimen/shrift_size" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+</ScrollView>

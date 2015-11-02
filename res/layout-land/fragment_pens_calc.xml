@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txNameProcNadb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/pcalc_oklady"
+        android:textSize="@dimen/shrift_size" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <EditText
+                android:id="@+id/edPOklad_zvan"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_oklad_zavan"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size" />
+            
+           <ImageButton
+                android:id="@+id/ibtHelp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:contentDescription="TODO"
+                android:src="@drawable/help"/>
+            
+
+            <EditText
+                android:id="@+id/edPOklad_dolg"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_oklad_dolg"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size"/>
+           <ImageButton
+                android:id="@+id/ibtHelp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:contentDescription="TODO"
+                android:src="@drawable/help"/>
+            
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/pcalc_visluga"
+        android:textSize="@dimen/shrift_size" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <EditText
+                android:id="@+id/edKalendVisl"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_calend_visluga"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size">
+
+                <requestFocus />
+            </EditText>
+           <ImageButton
+                android:id="@+id/ibtHelp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:contentDescription="TODO"
+                android:src="@drawable/help"/>          
+
+            <EditText
+                android:id="@+id/edPProcent_nadb"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_visl_for_procent_nadb"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size" />
+           <ImageButton
+                android:id="@+id/ibtHelp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:contentDescription="TODO"
+                android:src="@drawable/help"/>           
+        </TableRow>
+
+
+
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ПенсияСиловиков</string>
+    <string name="action_settings">Settings</string>
+    <string name="pcalc_oklad_zavan">Оклад по званию</string>
+    <string name="pcalc_oklad_dolg">Оклад по должности</string>
+    <string name="pcalc_visl_for_procent_nadb">Выслуга лет для % надбавки</string>
+    <string name="pcalc_calend_visluga">Календарная или льготная выслуга</string>
+    <string name="pcalc_result">Расчет</string>
+    <string name="pcalc_result_text">Итого : %s</string>
+    <string name="pcalc_nadb_vet_war">Ветеран боевых действий</string>
+    <string name="pcalc_nadb_raion_koeff">Районный коэффициент (%s%%)</string>
+    <string name="pcalc_nadb_raion_koeff_1">Районный коэффициент</string>
+    <string name="pcalc_procent_for_pensi">% для начисления денежного довольствия</string>
+    <string name="pcalc_nadb_visl_for_pensi">Надбавка за выслугу лет (%s%%)</string>
+    <string name="pcalc_sum_den_dovi">Сумма денежного довольствия</string>
+    <string name="pcalc_den_dovi">Денежное довольствие</string>
+    <string name="pcalc_oklady">Оклады</string>
+    <string name="pcalc_visluga">Выслуга</string>
+    <string name="pcalc_procent_for_ischisl_pensi">% для начисления пенсии</string>
+    <string name="pcalc_nadbavki">Надбавки</string>
+    <string name="pcalc_rashet_pens">Расчет пенсии</string>
+    <string name="pcalc_sum_den_dov_for_isch">Ден.дов. для исчис. пенсии (%s%%)</string>
+    <string name="pcalc_razm_v_procent">Размер пенсии в процентах</string>
+    <string name="pcalc_razm_pensii">Размер пенсии</string>
+    <string name="pcalc_razm_pensii_ural_koff">Размер пенсии с учетом рай.коэф</string>
+    <string name="pcalc_razm_min_pensii">Размер минимальной пенсии</string>
+    <string name="pcalc_nadb">Надбавки</string>
+    <string name="pcalc_nadb_VBD">Ветеран боевых действий (ст.45 г) %s</string>
+    <string name="pcalc_nadb_17B">Неработающим пенсионерам, на иждевенцев (ст.17 б) %s</string>
+    <string name="pcalc_nadb_17B_text">Количество иждевенцев (для не работающих)</string>
+    
+    <string-array name="pcalc_ar_vid_pensii">
+	    <item> Расчет по выслуге</item>
+	    <item> Помощь</item>
+    </string-array>
+    <string name="pcalc_pod_zago_vid_pens">Расчет по выслуге</string>
+    <string name="pcalc_pod_zago_help">Помощь</string>
+    
+    <string-array name="pcalc_ar_data_pocent_raion">
+		<item>0</item>
+		<item>15</item>
+		<item>20</item>
+		<item>30</item>
+		<item>40</item>
+		<item>50</item>
+	</string-array>
+	
+    <string-array name="pcalc_ar_data_zvan">
+		<item>рядовой;5000</item>
+		<item>курсант;5000</item>
+		<item>ефрейтор;5500</item>
+		<item>младший сержант;6000</item>
+		<item>сержант;6500</item>
+		<item>старшина;7500</item>
+		<item>прапорщик;8000</item>
+		<item>старший прапорщик;8500</item>
+		<item>младший лейтенант;9500</item>
+		<item>лейтенант;10000</item>
+		<item>старший лейтенант;10500</item>
+		<item>капитан;11000</item>
+		<item>майор;11500</item>
+		<item>подполковник;12000</item>
+		<item>полковник;13000</item>
+		<item>генерал-майор;20000</item>
+		<item>генерал-лейтенант;22000</item>
+		<item>генерал-полковник;25000</item>
+		<item>генерал армии;27000</item>																			
+    </string-array>
+   
+    
+    <string-array name="pcalc_ar_data_pocent_for_pensi">
+        <item>66.78</item>
+        <item>54.0</item>
+        <item>56.0</item>
+        <item>58.05</item>
+        <item>60.05</item>
+        <item>62.12</item>
+    </string-array>
+    <string-array name="pcalc_ar_data_kol_igd">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3 и более</item>
+    </string-array>
+    
+    <string name="pcalc_nadb_min_pens">4769.09</string>    
+    <string name="pcalc_nadb_100">100</string>    
+    <string name="pcalc_nadb_64">64</string>    
+    <string name="pcalc_nadb_32">32</string>    
+    <string name="pcalc_nadb_16">16</string>  
+
+    <string name="pcalc_help_oklad_zvan">1. Поле Оклад по званию - Ваш оклад по званию, в котором вы ушли на пенсию (или собираетесь). Пенсионеры данную информацию могут уточнить в пенсионном органе где состоят на учете. Действующие сотрудники и военнослужащие в бухгалтерии где получают зарплату.</string>
+    <string name="pcalc_help_oklad_dolg">2. Ваш должностной оклад, с которым вы пошли на пенсию</string>
+    <string name="pcalc_help_kal_or_lgot_visl">3. Выслугу календарную, если есть льготная то выслугу льготную. (Чем больше выслуга тем больше процент пенсии)</string>
+    <string name="pcalc_help_visl_for_procent_nadbavki">4. Выслуга для процентной надбавки, обычно она либо равна календарной.</string>
+</resources>
