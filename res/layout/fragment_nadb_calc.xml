@@ -50,6 +50,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical" />
+            <ImageButton
+                android:id="@+id/ibtHelpNadb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/help" />
 
         </TableRow>
 
@@ -75,9 +84,19 @@
 
             <Spinner
                 android:id="@+id/spNadbRaionKoeff"
-                style="@style/PCalcTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"/>
+            <ImageButton
+                android:id="@+id/ibtHelpNadb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/help" />
         </TableRow>
 
     </TableLayout>
@@ -117,10 +136,19 @@
 
             <Spinner
                 android:id="@+id/spIgdevency"
-                style="@style/PCalcTextView"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"/>
+            <ImageButton
+                android:id="@+id/ibtHelpNadb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/help" />
         </TableRow>
 
         <TableRow
@@ -132,10 +160,21 @@
 
             <CheckBox
                 android:id="@+id/chVetBoevDest"
-                style="@style/PCalcTextView"
-                android:layout_marginLeft="@dimen/table_margin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/pcalc_nadb_vet_war"
                 android:textSize="@dimen/shrift_size" />
+
+            <ImageButton
+                android:id="@+id/ibtHelpNadb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/help"/>
 
         </TableRow>
     </TableLayout>

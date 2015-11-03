@@ -15,6 +15,7 @@ public class PCalc{
 
 	private static final String JSON_ID = "id";
 	private static final String JSON_OKLAD_ZVAN = "zvan";
+	private static final String JSON_OKLAD_ZVAN_STRING = "zvan_string";
 	private static final String JSON_OKLAD_DOLGNOST = "dolgnost";
 	private static final String JSON_VISLUGA_NADBF_FOR_VISL = "visluga_for_nadbaf";	
 	private static final String JSON_VISLUGA_KALENDAR = "visluga_kalendar";	
@@ -29,11 +30,14 @@ public class PCalc{
 	private String[] dataPocentRaion; 
 	private String[] dataPocentForPensi; 
 	private String[] dataKolIgdevency;
-    private static PCalc pPens; 
+	private String[] dataZvanOklad;
+	
+	private static PCalc pPens; 
 	private UUID pId;
 	private Context context;
 	private ChangeParam chParam;
     private float pOkladZvani = 0;
+    private String pOkladZvaniString = "";
     private float pOkladDolg = 0;
     private float pVislLet = 0;
     private float pKlandVisl = 0;
@@ -58,12 +62,14 @@ public class PCalc{
 	private float pItogSum = 0;
 	private SparseArray<Float> nNadbavka;
 	private int pKolIgdev = 0;
+
  	
     
 	private PCalc(Context context) {
 		// Генерирование уникального идентификатора
 		pId = UUID.randomUUID();
 		this.context = context;
+		dataZvanOklad = context.getResources().getStringArray(R.array.pcalc_ar_data_zvan);
 		dataPocentRaion = context.getResources().getStringArray(R.array.pcalc_ar_data_pocent_raion);
 		dataPocentForPensi = context.getResources().getStringArray(R.array.pcalc_ar_data_pocent_for_pensi);
 		dataKolIgdevency = context.getResources().getStringArray(R.array.pcalc_ar_data_kol_igd);
@@ -96,6 +102,9 @@ public class PCalc{
 	public float getpOkladZvani() {
 		return pOkladZvani;
 	}
+	public String getpOkladZvanString(){
+		return pOkladZvaniString;
+	}
 	public void setpOkladDolg(float pOkladDolg) {
 		this.pOkladDolg = round(pOkladDolg,2);
 		RashetAll();
@@ -109,6 +118,19 @@ public class PCalc{
 		return pId;
 	}
 
+	public String[] getpZvanOklad() {
+		return dataZvanOklad;
+	}
+	
+	public void setpZvanOklad(int position) {
+		pOkladZvaniString = dataZvanOklad[position].toString();
+        String tStr = pOkladZvaniString;
+		tStr = tStr.substring(tStr.indexOf(";")+1);
+		this.pOkladZvani = Float.valueOf(tStr);
+		RashetAll();
+		notifyListener();
+	}
+	
 	public String[] getpRayonKoef() {
 		return dataPocentRaion;
 	}
@@ -451,6 +473,7 @@ public class PCalc{
 		json.put(JSON_VISLUGA_NADBF_FOR_VISL, pVislLet);
 		json.put(JSON_VBD, pVetBoevDeist);
 		json.put(JSON_KOLICHESTVO_IGDEV, pKolIgdev);
+		json.put(JSON_OKLAD_ZVAN_STRING,pOkladZvaniString);
 		return json;
 	}
 	public void loadPCalc(JSONObject json) throws JSONException {
@@ -463,6 +486,7 @@ public class PCalc{
 		pVislLet = json.getInt(JSON_VISLUGA_NADBF_FOR_VISL);
 		pVetBoevDeist = json.getBoolean(JSON_VBD);
 		pKolIgdev = json.getInt(JSON_KOLICHESTVO_IGDEV);
+		pOkladZvaniString = json.getString(JSON_OKLAD_ZVAN_STRING);
 	}
 
 

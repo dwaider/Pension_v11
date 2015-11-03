@@ -26,15 +26,12 @@
             android:layout_marginEnd="@dimen/table_margin"
             android:layout_marginLeft="@dimen/table_margin" >
 
-            <EditText
-                android:id="@+id/edPOklad_zvan"
+            <Spinner
+                android:id="@+id/spPOklad_zvan"
                 style="@style/PCalcTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:ems="10"
                 android:hint="@string/pcalc_oklad_zavan"
-                android:inputType="number|numberDecimal"
                 android:textSize="@dimen/shrift_size" />
 
             <ImageButton
@@ -44,7 +41,7 @@
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
                 android:background="@null"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/help"
                 tools:ignore="ContentDescription" />
 
@@ -74,7 +71,7 @@
                 android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/help"/>
         </TableRow>
     </TableLayout>
@@ -116,7 +113,7 @@
                 android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/help"/>
         </TableRow>
 
@@ -144,7 +141,7 @@
                 android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/help"/>
         </TableRow>
     </TableLayout>

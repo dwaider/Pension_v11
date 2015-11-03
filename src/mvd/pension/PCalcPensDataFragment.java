@@ -12,15 +12,19 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 
 public class PCalcPensDataFragment extends Fragment {
 	private static final String DIALOG_DATA = "datahelp";
 	
 	private PCalc pens;
-	private EditText pOkladZvan;
+	private Spinner spOkladZvan;
 	private EditText pOkladDolg;
 	private EditText pProcentNadbv;
 	private EditText pKalendVisl;
@@ -42,17 +46,36 @@ public class PCalcPensDataFragment extends Fragment {
 		View v = inflater.inflate(R.layout.fragment_pens_calc, parent, false);
 		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 		
-		pOkladZvan = (EditText)v.findViewById(R.id.edPOklad_zvan);
+		spOkladZvan = (Spinner)v.findViewById(R.id.spPOklad_zvan);
 		pOkladDolg = (EditText)v.findViewById(R.id.edPOklad_dolg);
 		pProcentNadbv = (EditText)v.findViewById(R.id.edPProcent_nadb);
 		pKalendVisl = (EditText)v.findViewById(R.id.edKalendVisl);
 
-		if (pens.getpOkladZvani() != 0)  pOkladZvan.setText(String.valueOf((int)pens.getpOkladZvani()));
+		// адаптер
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, pens.getpZvanOklad());
+		spOkladZvan.setAdapter(adapter);
+        //загрузка сохраненных данных
+		spOkladZvan.setSelection(adapter.getPosition(pens.getpOkladZvanString()));
+		spOkladZvan.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				 pens.setpZvanOklad(position);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+
 		if (pens.getpOkladDolg() != 0) pOkladDolg.setText(String.valueOf((int)pens.getpOkladDolg()));
 		if (pens.getVislLetPoln() != 0) pProcentNadbv.setText(String.valueOf((int)pens.getVislLetPoln()));
 		if (pens.getpKlandVisl() != 0) pKalendVisl.setText(String.valueOf((int)pens.getpKlandVisl()));
 		
-		pOkladZvan.addTextChangedListener(new GenericTextWatcher(pOkladZvan));
 		pOkladDolg.addTextChangedListener(new GenericTextWatcher(pOkladDolg));
 		pProcentNadbv.addTextChangedListener(new GenericTextWatcher(pProcentNadbv));
 		pKalendVisl.addTextChangedListener(new GenericTextWatcher(pKalendVisl));
@@ -107,9 +130,6 @@ public class PCalcPensDataFragment extends Fragment {
 			        switch(view.getId()){
 			            case R.id.edPOklad_dolg:
 			                pens.setpOkladDolg(TextToFloat);
-			                break;
-			            case R.id.edPOklad_zvan:
-			                pens.setpOkladZvani(TextToFloat);
 			                break;
 			            case R.id.edPProcent_nadb:
 			                pens.setpVislLet(TextToFloat);
