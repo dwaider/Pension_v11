@@ -126,8 +126,12 @@ public final class R {
         public static final int pcalc_calend_visluga=0x7f070005;
         public static final int pcalc_den_dovi=0x7f07000e;
         public static final int pcalc_help_kal_or_lgot_visl=0x7f070026;
+        public static final int pcalc_help_nadbavka_for_igdev=0x7f07002a;
+        public static final int pcalc_help_nadbavka_vbd=0x7f07002b;
         public static final int pcalc_help_oklad_dolg=0x7f070025;
         public static final int pcalc_help_oklad_zvan=0x7f070024;
+        public static final int pcalc_help_procent_for_pensi=0x7f070028;
+        public static final int pcalc_help_raion_koeff=0x7f070029;
         public static final int pcalc_help_visl_for_procent_nadbavki=0x7f070027;
         public static final int pcalc_nadb=0x7f070019;
         public static final int pcalc_nadb_100=0x7f070020;
@@ -161,7 +165,7 @@ public final class R {
         public static final int pcalc_sum_den_dovi=0x7f07000d;
         public static final int pcalc_visl_for_procent_nadb=0x7f070004;
         public static final int pcalc_visluga=0x7f070010;
-        public static final int todo=0x7f070028;
+        public static final int todo=0x7f07002c;
     }
     public static final class style {
         /** 

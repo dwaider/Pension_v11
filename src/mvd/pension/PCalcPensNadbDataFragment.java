@@ -2,19 +2,28 @@ package mvd.pension;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Spinner;
 
 public class PCalcPensNadbDataFragment  extends Fragment {
+	private static final String DIALOG_DATA = "datahelp";
+
 	private PCalc pens;
+	private ImageButton ibtHelp5;
+	private ImageButton ibtHelp6;
+	private ImageButton ibtHelp7;
+	private ImageButton ibtHelp8;	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -93,6 +102,37 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 				
 			}
 		});
+		OnClickListener d = new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				FragmentManager fm = getActivity().getSupportFragmentManager();
+				DataMessageFragmnet iDialog = null;
+				switch(v.getId()){
+	            case R.id.ibtHelpNadb1:
+	            	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_procent_for_pensi),getString(R.string.pcalc_procent_for_pensi));
+	            	break;
+	            case R.id.ibtHelpNadb2:
+	            	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_raion_koeff),getString(R.string.pcalc_nadb_raion_koeff_1));
+	            	break;	
+	            case R.id.ibtHelpNadb3:
+	            	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_nadbavka_for_igdev),getString(R.string.pcalc_nadb_17B_text));
+	            	break;	
+		        case R.id.ibtHelpNadb4:
+		        	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_nadbavka_vbd),getString(R.string.pcalc_nadb_vet_war));
+		        	break;	
+				}				
+				if (iDialog != null) iDialog.show(fm, DIALOG_DATA);
+			}
+		};
+		ibtHelp5 = (ImageButton)v.findViewById(R.id.ibtHelpNadb1);//понижающий коэффицент
+		ibtHelp5.setOnClickListener(d);
+		ibtHelp6 = (ImageButton)v.findViewById(R.id.ibtHelpNadb2);//районный коэффициент
+		ibtHelp6.setOnClickListener(d);
+		ibtHelp7 = (ImageButton)v.findViewById(R.id.ibtHelpNadb3);//иждевенцы
+		ibtHelp7.setOnClickListener(d);
+		ibtHelp8 = (ImageButton)v.findViewById(R.id.ibtHelpNadb4);//вбд
+		ibtHelp8.setOnClickListener(d);
         return v;
 	}
 

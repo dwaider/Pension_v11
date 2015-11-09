@@ -97,7 +97,7 @@ public class PCalcPensDataFragment extends Fragment {
 	            	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_kal_or_lgot_visl),getString(R.string.pcalc_calend_visluga));
 	            	break;	
 		        case R.id.ibtHelp4:
-		        	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_visl_for_procent_nadbavki),getString(R.string.pcalc_help_visl_for_procent_nadbavki));
+		        	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_visl_for_procent_nadbavki),getString(R.string.pcalc_visl_for_procent_nadb));
 		        	break;	
 				}				
 				if (iDialog != null) iDialog.show(fm, DIALOG_DATA);
@@ -159,7 +159,7 @@ public class PCalcPensDataFragment extends Fragment {
 		        switch(v.getId()){
 	                case R.id.edKalendVisl:
 	                   if (pens.getpKlandVisl()< 20) {
-	                	   ((EditText)v).setError("Право на пенсию не наступило.");
+	                	   //((EditText)v).setError("Право на пенсию не наступило.");
 	                   }
 	                   break;
 		        }
