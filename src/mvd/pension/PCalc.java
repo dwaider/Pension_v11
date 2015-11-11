@@ -38,6 +38,7 @@ public class PCalc{
 	private ChangeParam chParam;
     private float pOkladZvani = 0;
     private String pOkladZvaniString = "";
+    private String pProcentForPensiiString = "";
     private float pOkladDolg = 0;
     private float pVislLet = 0;
     private float pKlandVisl = 0;
@@ -289,7 +290,10 @@ public class PCalc{
 	}
 
 	public void setpProcentForPensii(int position) {
-		pProcentForPensii = Float.valueOf(dataPocentForPensi[position].toString());
+		pProcentForPensiiString = dataPocentForPensi[position].toString();
+        String tStr = pProcentForPensiiString;
+		tStr = tStr.substring(tStr.indexOf(";")+1);
+		this.pProcentForPensii = Float.valueOf(tStr);
 		RashetAll();
 		notifyListener();
 	}

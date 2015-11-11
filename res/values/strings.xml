@@ -72,12 +72,12 @@
    
     
     <string-array name="pcalc_ar_data_pocent_for_pensi">
-        <item>66.78</item>
-        <item>54.0</item>
-        <item>56.0</item>
-        <item>58.05</item>
-        <item>60.05</item>
-        <item>62.12</item>
+        <item>c 01.10.2015 года;66.78</item>
+        <item>c 01.01.2012 гоад;54.0</item>
+        <item>c 01.01.2013 года;56.0</item>
+        <item>c 01.01.2014 года;58.05</item>
+        <item>с 01.10.2014 года;60.05</item>
+        <item>c 01.01.2015 года;62.12</item>
     </string-array>
     <string-array name="pcalc_ar_data_kol_igd">
 		<item>0</item>
