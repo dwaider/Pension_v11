@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:ignore="HardcodedText" >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txNameProcNadb"
@@ -42,8 +44,7 @@
                 android:layout_weight="0"
                 android:background="@null"
                 android:contentDescription="@string/todo"
-                android:src="@drawable/help"
-                tools:ignore="ContentDescription" />
+                android:src="@drawable/help" />
 
         </TableRow>
 
@@ -147,3 +148,4 @@
     </TableLayout>
 
 </LinearLayout>
+</ScrollView>

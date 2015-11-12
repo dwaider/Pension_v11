@@ -93,6 +93,7 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
+				//попробуем здесь сделать биллинг на рассчет пенсии с учетом 
 				   pens.setpIgdevency(position);
 			}
 
