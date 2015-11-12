@@ -102,4 +102,6 @@
     <string name="pcalc_help_nadbavka_vbd">8. Надбавка участникам боевых действий. (Имеют удостоверения участника боевых действий).</string>
     
     <string name="todo">TODO</string>
+    <string name="allow">Allow the user access</string>
+    <string name="dont_allow">Don\'t allow the user access</string>
 </resources>
