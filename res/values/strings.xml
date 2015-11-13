@@ -100,6 +100,14 @@
     <string name="pcalc_help_raion_koeff">6. ФЗ от 12 февраля 1993 г. № 4468-I Cт. 48 «О пенсионном обеспечении лиц, проходивших военную службу, службу в органах внутренних дел, Государственной противопожарной службе, органах по контролю за оборотом наркотических средств и психотропных веществ, учреждениях и органах уголовно-исполнительной системы, и их семей» - Если пенсионер проживает в районе, где установлен районный коэффициент, то военная пенсия (в том числе повышения и надбавки к военной пенсии) устанавливаются с районным коэффициентом (независимо от того, где проходила служба и где назначалась военная пенсия). Если же пенсионер проживает в районах с нормальными территориальными условиями, то районный коэффициент к военной пенсии сохраняется, только если пенсионер прослужил не менее 15 лет в районах Крайнего Севера или 20 лет в приравненных к ним местностях.</string>
     <string name="pcalc_help_nadbavka_for_igdev">7. Надбавка на иждевенцев к пенсии для не работающих пенсионеров. (ст. 17 б)</string>
     <string name="pcalc_help_nadbavka_vbd">8. Надбавка участникам боевых действий. (Имеют удостоверения участника боевых действий).</string>
+
+    <!-- Unlicensed dialog messages -->
+    <string name="unlicensed_dialog_title">Application not licensed</string>
+    <string name="unlicensed_dialog_body">This application is not licensed. Please purchase it from Android Market.</string>
+    <string name="unlicensed_dialog_retry_body">Unable to validate license. Check to see if a network connection is available.</string>
+    <string name="buy_button">Buy app</string>
+    <string name="retry_button">Retry</string>
+    <string name="quit_button">Exit</string>
     
     <string name="todo">TODO</string>
     <string name="allow">Allow the user access</string>

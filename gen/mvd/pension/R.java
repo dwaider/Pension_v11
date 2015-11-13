@@ -327,7 +327,7 @@ containing a value of this type.
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
-        public static final int allow=0x7f060047;
+        public static final int allow=0x7f06004d;
         public static final int app_name=0x7f06001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -352,6 +352,7 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f060014;
+        public static final int buy_button=0x7f060049;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -423,7 +424,7 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int dont_allow=0x7f060048;
+        public static final int dont_allow=0x7f06004e;
         public static final int pcalc_calend_visluga=0x7f06001f;
         public static final int pcalc_den_dovi=0x7f060028;
         public static final int pcalc_help_kal_or_lgot_visl=0x7f060040;
@@ -466,7 +467,14 @@ containing a value of this type.
         public static final int pcalc_sum_den_dovi=0x7f060027;
         public static final int pcalc_visl_for_procent_nadb=0x7f06001e;
         public static final int pcalc_visluga=0x7f06002a;
-        public static final int todo=0x7f060046;
+        public static final int quit_button=0x7f06004b;
+        public static final int retry_button=0x7f06004a;
+        public static final int todo=0x7f06004c;
+        public static final int unlicensed_dialog_body=0x7f060047;
+        public static final int unlicensed_dialog_retry_body=0x7f060048;
+        /**  Unlicensed dialog messages 
+         */
+        public static final int unlicensed_dialog_title=0x7f060046;
     }
     public static final class style {
         /** 
