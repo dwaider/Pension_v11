@@ -21,8 +21,6 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
     private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA30VXRRfhvaGyg/ClKwLdaUAz5Umfd2xL2IA6vh0fCjSuIlIDcvOa7OfUjUGFK0lHnvUB2CGm6tBHM3JC9esCkUiFniC9VbGRAzz8X6ToEBQ97g0f2nfzYBM9byoANwvSEKB9xBBweBjKDbU2TbbUdtcpONdoPClyEQeDYRDeAvYYtO0xF/Cdkog7SHKWIz0/T8mHBEqd7t7km3eUz9YDcFlNrtY3JdAO5Mz/wOfDpNYaEBwIZMAdE2N92oqhdedNENFafe+3vuGLRU0seGuoe8msSbNUGTMqOWhHkh52bBmyNF4wPIAFnadWfg+Mh5JEMzT9WziDU7s5gwx3rIGYwQIDAQAB";
     private LicenseCheckerCallback mLicenseCheckerCallback;
     private LicenseChecker mChecker;
-    // A handler on the UI thread.
-    private Handler mHandler;
     private Context mContex;
 
 
@@ -69,7 +67,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 				.commit();
 			}
 		mContex = this;	
-        mHandler = new Handler();
+        new Handler();
         // Try to use more data here. ANDROID_ID is a single point of attack.
         String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
 
@@ -81,8 +79,6 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
                 new AESObfuscator(SALT, getPackageName(), deviceId)),
             BASE64_PUBLIC_KEY);
         doCheck();
-        
-	
 	}
     private void doCheck() {
         setProgressBarIndeterminateVisibility(true);

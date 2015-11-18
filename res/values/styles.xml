@@ -26,5 +26,7 @@
     <style name="FontAll">
         <item name="android:background">#E3F2FD</item>
     </style>
-
+    <style name="AppTheme.BrandedLaunch" parent="AppBaseTheme">
+	    <item name="android:windowBackground">@drawable/stars_logo</item>
+	</style>
 </resources>
