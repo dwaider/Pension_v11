@@ -19,7 +19,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin" >
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/btbagr" >
 
         <TableRow
             android:id="@+id/tableRow2"
@@ -68,7 +69,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txSpravochnikVisl"
                 style="@style/PCalcTextView"
                 android:text="@string/pcalc_nadb_raion_koeff_1"
                  />
@@ -111,7 +112,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin" >
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/btbagr" >
 
         <TableRow
             android:id="@+id/tableRow6"

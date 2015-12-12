@@ -1,5 +1,6 @@
 package mvd.pension;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,11 +20,13 @@ import android.widget.Spinner;
 public class PCalcPensNadbDataFragment  extends Fragment {
 	private static final String DIALOG_DATA = "datahelp";
 
+
 	private PCalc pens;
 	private ImageButton ibtHelp5;
 	private ImageButton ibtHelp6;
 	private ImageButton ibtHelp7;
 	private ImageButton ibtHelp8;	
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +49,7 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 					int position, long id) {
 				// TODO Auto-generated method stub
 				pens.setpRayonKoeff(position);
+				//if (position==1) bayPay();
 			}
 
 			@Override
@@ -55,6 +59,8 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 			}
 		});
         CheckBox chVetBoevDest = (CheckBox) v.findViewById(R.id.chVetBoevDest);
+        if (!pens.ispBay_save_and_nadbav()) {chVetBoevDest.setEnabled(false);}//если куплено
+        else chVetBoevDest.setEnabled(true);
         chVetBoevDest.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -85,6 +91,8 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 		});
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, pens.getDataKolIgdevency());
         Spinner spKolIgdev = (Spinner) v.findViewById(R.id.spIgdevency);
+        if (!pens.ispBay_save_and_nadbav()) {spKolIgdev.setEnabled(false);}//если куплено
+        else spKolIgdev.setEnabled(true);
         spKolIgdev.setAdapter(adapter2);
         spKolIgdev.setSelection(adapter2.getPosition(pens.getKolIgdevencev()));
         spKolIgdev.setOnItemSelectedListener(new OnItemSelectedListener() {

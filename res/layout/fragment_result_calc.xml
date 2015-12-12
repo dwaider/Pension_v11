@@ -8,10 +8,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="8dp" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txSpravochnikVisl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/table_margin"
             android:layout_marginLeft="@dimen/table_margin"
+            android:background="@drawable/btbagr"
             android:padding="4dp" >
 
             <TableRow android:id="@+id/tableRow4" >
@@ -93,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/table_margin"
             android:layout_marginLeft="@dimen/table_margin"
+            android:background="@drawable/btbagr"
             android:padding="4dp" >
 
             <TableRow android:id="@+id/TableRow04" >
@@ -212,7 +215,10 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/pcalc_result_text"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#21ff29"
+            android:textSize="30sp" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -35,6 +35,11 @@ public class PCalcListFragment extends ListFragment {
  	 		 startActivity(i);
  	 		 getActivity().overridePendingTransition(R.anim.slide_left_in, R.anim.slide_left_out);
 		 } 
+		 if (sPosition == VidPensii[2]) { //в ресурсах должна быть ссылка на помощь
+ 			 Intent i = new Intent(getActivity(), PCalcPayActivity.class);
+ 	 		 startActivity(i);
+ 	 		 getActivity().overridePendingTransition(R.anim.slide_left_in, R.anim.slide_left_out);
+		 } 
 	}
 	
 	@Override
@@ -60,5 +65,6 @@ public class PCalcListFragment extends ListFragment {
 			return convertView;
 		}
 	}
+	
 
 }

@@ -1,9 +1,8 @@
 package mvd.pension;
 
-import com.google.android.vending.licensing.AESObfuscator;
+
 import com.google.android.vending.licensing.LicenseChecker;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
-import com.google.android.vending.licensing.ServerManagedPolicy;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,8 +10,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings.Secure;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -67,7 +64,8 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 				.commit();
 			}
 		mContex = this;	
-        new Handler();
+		//–≈¿À»«¿÷»ﬁ À»÷≈Õ«»» Õ¿ œŒ“ŒÃ ¬ —À≈ƒ”ﬁŸ»ﬁ ¬≈–—»ﬁ œ–»ÀŒ∆≈Õ»ﬂ
+		/* new Handler();
         // Try to use more data here. ANDROID_ID is a single point of attack.
         String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
 
@@ -78,7 +76,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
             this, new ServerManagedPolicy(this,
                 new AESObfuscator(SALT, getPackageName(), deviceId)),
             BASE64_PUBLIC_KEY);
-        doCheck();
+        doCheck();*/
 	}
     private void doCheck() {
         setProgressBarIndeterminateVisibility(true);

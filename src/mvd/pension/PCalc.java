@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import android.content.Context;
 import android.util.SparseArray;
 
@@ -23,6 +22,7 @@ public class PCalc{
 	private static final String JSON_PROCENT_FOR_PENSII = "procent_for_pensii";	//ограничения для ден дов
 	private static final String JSON_KOLICHESTVO_IGDEV = "kolichestvo_igdev";
 	private static final String JSON_VBD = "vbd";
+	private static final String JSON_PAY_SAVE_NADB = "pay_save_nadb";
 	
 	private static final String FILENAME = "penscalc.json";
 	
@@ -63,8 +63,17 @@ public class PCalc{
 	private float pItogSum = 0;
 	private SparseArray<Float> nNadbavka;
 	private int pKolIgdev = 0;
+	
+ 	private boolean pBay_save_and_nadbav = false;
 
- 	
+ 	public void setBay_save_and_nadbav(boolean bb){
+ 		pBay_save_and_nadbav = bb;
+ 	}
+    
+	public boolean ispBay_save_and_nadbav() {
+		return pBay_save_and_nadbav;
+	}
+    
     
 	private PCalc(Context context) {
 		// Генерирование уникального идентификатора
@@ -90,7 +99,6 @@ public class PCalc{
 				// TODO Auto-generated catch block
 				pPens = new PCalc(context);
 			}
-
 		}
 		return pPens;
 	}
@@ -225,6 +233,7 @@ public class PCalc{
     	RashetNadavok();
     	RashetItogVipl();
 		try {
+			//сохранение параметров здесь можно осуществить покупку данной функции 15 руб
 			PcalcIntentJSONSerializer.get(this.context).savePensCalc(pPens, FILENAME);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -468,6 +477,7 @@ public class PCalc{
 	
 	public JSONObject toJSON() throws JSONException {
 		JSONObject json = new JSONObject();
+		json.put(JSON_PAY_SAVE_NADB,pBay_save_and_nadbav);
 		json.put(JSON_ID,  pId.toString());
 		json.put(JSON_OKLAD_DOLGNOST, pOkladDolg);
 		json.put(JSON_OKLAD_ZVAN, pOkladZvani);
@@ -481,16 +491,19 @@ public class PCalc{
 		return json;
 	}
 	public void loadPCalc(JSONObject json) throws JSONException {
-		pId = UUID.fromString(json.getString(JSON_ID));
-		pOkladDolg = (float) json.getDouble(JSON_OKLAD_DOLGNOST);
-		pOkladZvani = (float) json.getDouble(JSON_OKLAD_ZVAN);
-		pRaionKoeffRas = (float) json.getDouble(JSON_RAION_KOEFF);
-		pProcentForPensii = (float) json.getDouble(JSON_PROCENT_FOR_PENSII);
-		pKlandVisl = json.getInt(JSON_VISLUGA_KALENDAR);
-		pVislLet = json.getInt(JSON_VISLUGA_NADBF_FOR_VISL);
-		pVetBoevDeist = json.getBoolean(JSON_VBD);
-		pKolIgdev = json.getInt(JSON_KOLICHESTVO_IGDEV);
-		pOkladZvaniString = json.getString(JSON_OKLAD_ZVAN_STRING);
+		pBay_save_and_nadbav = json.getBoolean(JSON_PAY_SAVE_NADB);
+		if (pBay_save_and_nadbav) {//если куплено сохранение и надбавки тогда загружать данные
+			pId = UUID.fromString(json.getString(JSON_ID));
+			pOkladDolg = (float) json.getDouble(JSON_OKLAD_DOLGNOST);
+			pOkladZvani = (float) json.getDouble(JSON_OKLAD_ZVAN);
+			pRaionKoeffRas = (float) json.getDouble(JSON_RAION_KOEFF);
+			pProcentForPensii = (float) json.getDouble(JSON_PROCENT_FOR_PENSII);
+			pKlandVisl = json.getInt(JSON_VISLUGA_KALENDAR);
+			pVislLet = json.getInt(JSON_VISLUGA_NADBF_FOR_VISL);
+			pVetBoevDeist = json.getBoolean(JSON_VBD);
+			pKolIgdev = json.getInt(JSON_KOLICHESTVO_IGDEV);
+			pOkladZvaniString = json.getString(JSON_OKLAD_ZVAN_STRING);
+		}
 	}
 
 
@@ -510,5 +523,7 @@ public class PCalc{
   			chParam.onChangeParam();
   		}
   	}
+
+
 
 }
