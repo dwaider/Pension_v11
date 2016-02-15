@@ -20,6 +20,10 @@ public class PCalcListFragment extends ListFragment {
 	  VidPensii =getResources().getStringArray(R.array.pcalc_ar_vid_pensii);
 	  PCalcAdapter adapter = new PCalcAdapter(VidPensii);
 	  setListAdapter(adapter);
+//	  Intent i = new Intent(getActivity(), PCalcService.class);
+//	  getActivity().startService(i);
+	  
+	  PCalcService.setServiceAlarm(getActivity(), true);//запуск сервиса
 	}
 	
 	@Override

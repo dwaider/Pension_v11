@@ -6,7 +6,7 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <TextView
@@ -105,20 +105,71 @@
                 style="@style/PCalcTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
                 android:hint="@string/pcalc_calend_visluga"
                 android:inputType="number|numberDecimal"
-                android:textSize="@dimen/shrift_size"/>
-                <ImageButton
+                android:textSize="@dimen/shrift_size" />
+
+            <ImageButton
                 android:id="@+id/ibtHelp3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
+                android:background="@null"
                 android:contentDescription="@string/todo"
-                android:src="@drawable/help"/>
+                android:src="@drawable/help" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <CheckBox
+                android:id="@+id/chSmeshPens"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pcalc_raschet_visluga_trud" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/table_margin"
+            android:layout_marginLeft="@dimen/table_margin" >
+
+            <EditText
+                android:id="@+id/edObsheTrud"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_visluga_trud"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size" >
+
+                <requestFocus />
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/ibtHelp6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/help" />
+
         </TableRow>
 
         <TableRow
@@ -148,6 +199,7 @@
                 android:contentDescription="@string/todo"
                 android:src="@drawable/help"/>
         </TableRow>
+
     </TableLayout>
 
 </LinearLayout>

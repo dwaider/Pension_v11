@@ -249,38 +249,41 @@ containing a value of this type.
     }
     public static final class id {
         public static final int TableRow01=0x7f0a0017;
-        public static final int TableRow02=0x7f0a0032;
-        public static final int TableRow03=0x7f0a003a;
-        public static final int TableRow04=0x7f0a002f;
-        public static final int TableRow05=0x7f0a003d;
-        public static final int TableRow06=0x7f0a0037;
-        public static final int TableRow11=0x7f0a0040;
+        public static final int TableRow02=0x7f0a0035;
+        public static final int TableRow03=0x7f0a003d;
+        public static final int TableRow04=0x7f0a0032;
+        public static final int TableRow05=0x7f0a0040;
+        public static final int TableRow06=0x7f0a003a;
+        public static final int TableRow11=0x7f0a0043;
         public static final int TextView01=0x7f0a000d;
         public static final int TextView02=0x7f0a0016;
-        public static final int TextView03=0x7f0a0035;
-        public static final int TextView04=0x7f0a003e;
-        public static final int TextView05=0x7f0a003b;
-        public static final int TextView06=0x7f0a0038;
+        public static final int TextView03=0x7f0a0038;
+        public static final int TextView04=0x7f0a0041;
+        public static final int TextView05=0x7f0a003e;
+        public static final int TextView06=0x7f0a003b;
         public static final int btPayAutoSaveNadbavki=0x7f0a001d;
+        public static final int chSmeshPens=0x7f0a0026;
         public static final int chVetBoevDest=0x7f0a001b;
         public static final int edKalendVisl=0x7f0a0024;
+        public static final int edObsheTrud=0x7f0a0027;
         public static final int edPOklad_dolg=0x7f0a0021;
-        public static final int edPProcent_nadb=0x7f0a0026;
+        public static final int edPProcent_nadb=0x7f0a0029;
         public static final int fragmentContainer=0x7f0a0006;
         public static final int hybrid=0x7f0a0001;
         public static final int ibtHelp1=0x7f0a0020;
         public static final int ibtHelp2=0x7f0a0022;
         public static final int ibtHelp3=0x7f0a0025;
-        public static final int ibtHelp4=0x7f0a0027;
+        public static final int ibtHelp4=0x7f0a002a;
+        public static final int ibtHelp6=0x7f0a0028;
         public static final int ibtHelpNadb1=0x7f0a0010;
         public static final int ibtHelpNadb2=0x7f0a0013;
         public static final int ibtHelpNadb3=0x7f0a0019;
         public static final int ibtHelpNadb4=0x7f0a001c;
         public static final int imageView1=0x7f0a0007;
-        public static final int menu_back_pens=0x7f0a0045;
+        public static final int menu_back_pens=0x7f0a0049;
         public static final int none=0x7f0a0002;
         public static final int normal=0x7f0a0003;
-        public static final int pcalc_list_item_titleTextView=0x7f0a0044;
+        public static final int pcalc_list_item_titleTextView=0x7f0a0047;
         public static final int satellite=0x7f0a0004;
         public static final int scrollView1=0x7f0a0008;
         public static final int spIgdevency=0x7f0a0018;
@@ -293,30 +296,31 @@ containing a value of this type.
         public static final int tableRow4=0x7f0a000c;
         public static final int tableRow5=0x7f0a0011;
         public static final int tableRow6=0x7f0a0015;
-        public static final int tableRow7=0x7f0a002c;
+        public static final int tableRow7=0x7f0a002f;
         public static final int terrain=0x7f0a0005;
-        public static final int textView1=0x7f0a000e;
-        public static final int textView3=0x7f0a0029;
+        public static final int textView3=0x7f0a002c;
         public static final int textView4=0x7f0a0014;
-        public static final int txDenDovForIsch=0x7f0a0033;
-        public static final int txDenDovForIschislPensii=0x7f0a0034;
-        public static final int txDolOklad=0x7f0a0028;
-        public static final int txItog=0x7f0a0042;
-        public static final int txMinPensii=0x7f0a0039;
-        public static final int txNadbavka=0x7f0a0041;
+        public static final int txDenDovForIsch=0x7f0a0036;
+        public static final int txDenDovForIschislPensii=0x7f0a0037;
+        public static final int txDolOklad=0x7f0a002b;
+        public static final int txItog=0x7f0a0045;
+        public static final int txMinPensii=0x7f0a003c;
+        public static final int txNadbavka=0x7f0a0044;
         public static final int txNameProcNadb=0x7f0a001e;
-        public static final int txNameRaionKoeff=0x7f0a0030;
-        public static final int txNameRazmUchRaionKoeffPensii=0x7f0a0043;
-        public static final int txRaionKoeff=0x7f0a0031;
-        public static final int txRasmPensii=0x7f0a003c;
-        public static final int txRazmUchetRaionKoeff=0x7f0a003f;
-        public static final int txRazmVProcent=0x7f0a0036;
+        public static final int txNameRaionKoeff=0x7f0a0033;
+        public static final int txNameRazmUchRaionKoeffPensii=0x7f0a0046;
+        public static final int txRaionKoeff=0x7f0a0034;
+        public static final int txRasmPensii=0x7f0a003f;
+        public static final int txRazmUchetRaionKoeff=0x7f0a0042;
+        public static final int txRazmVProcent=0x7f0a0039;
         public static final int txSpravochnikVisl=0x7f0a000a;
-        public static final int txSumDov=0x7f0a002e;
-        public static final int txView7=0x7f0a002d;
-        public static final int txVislProcNadb=0x7f0a002b;
+        public static final int txSumDov=0x7f0a0031;
+        public static final int txVal=0x7f0a000e;
+        public static final int txValSpinner=0x7f0a0048;
+        public static final int txView7=0x7f0a0030;
+        public static final int txVislProcNadb=0x7f0a002e;
         public static final int txVisluga=0x7f0a0023;
-        public static final int txZvanOklad=0x7f0a002a;
+        public static final int txZvanOklad=0x7f0a002d;
         public static final int viewPager=0x7f0a0000;
     }
     public static final class integer {
@@ -331,6 +335,7 @@ containing a value of this type.
         public static final int fragment_pens_calc=0x7f030005;
         public static final int fragment_result_calc=0x7f030006;
         public static final int list_item_pcalc=0x7f030007;
+        public static final int rowspinner=0x7f030008;
     }
     public static final class menu {
         public static final int pens=0x7f0d0000;
@@ -340,7 +345,7 @@ containing a value of this type.
     }
     public static final class string {
         public static final int action_settings=0x7f07001b;
-        public static final int allow=0x7f07004f;
+        public static final int allow=0x7f070052;
         public static final int app_name=0x7f07001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -365,7 +370,7 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f070014;
-        public static final int buy_button=0x7f07004a;
+        public static final int buy_button=0x7f07004d;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -437,60 +442,63 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f070013;
-        public static final int dont_allow=0x7f070050;
-        public static final int mvd_pension_string_help_zago_visl_let=0x7f070051;
-        public static final int mvd_pension_string_pay_autosave_nadbavki=0x7f07004d;
+        public static final int dont_allow=0x7f070053;
+        public static final int mvd_pension_string_help_zago_visl_let=0x7f070054;
+        public static final int mvd_pension_string_pay_autosave_nadbavki=0x7f070050;
         public static final int pcalc_calend_visluga=0x7f07001f;
-        public static final int pcalc_den_dovi=0x7f070028;
-        public static final int pcalc_help_kal_or_lgot_visl=0x7f070041;
-        public static final int pcalc_help_nadbavka_for_igdev=0x7f070045;
-        public static final int pcalc_help_nadbavka_vbd=0x7f070046;
-        public static final int pcalc_help_oklad_dolg=0x7f070040;
-        public static final int pcalc_help_oklad_zvan=0x7f07003f;
-        public static final int pcalc_help_procent_for_pensi=0x7f070043;
-        public static final int pcalc_help_raion_koeff=0x7f070044;
-        public static final int pcalc_help_visl_for_procent_nadbavki=0x7f070042;
-        public static final int pcalc_nadb=0x7f070033;
-        public static final int pcalc_nadb_100=0x7f07003b;
-        public static final int pcalc_nadb_16=0x7f07003e;
-        public static final int pcalc_nadb_17B=0x7f070035;
-        public static final int pcalc_nadb_17B_text=0x7f070036;
-        public static final int pcalc_nadb_32=0x7f07003d;
-        public static final int pcalc_nadb_64=0x7f07003c;
-        public static final int pcalc_nadb_VBD=0x7f070034;
-        public static final int pcalc_nadb_min_pens=0x7f07003a;
-        public static final int pcalc_nadb_raion_koeff=0x7f070023;
-        public static final int pcalc_nadb_raion_koeff_1=0x7f070024;
-        public static final int pcalc_nadb_vet_war=0x7f070022;
-        public static final int pcalc_nadb_visl_for_pensi=0x7f070026;
-        public static final int pcalc_nadbavki=0x7f07002c;
+        public static final int pcalc_den_dovi=0x7f07002a;
+        public static final int pcalc_help_kal_or_lgot_visl=0x7f070043;
+        public static final int pcalc_help_nadbavka_for_igdev=0x7f070047;
+        public static final int pcalc_help_nadbavka_vbd=0x7f070048;
+        public static final int pcalc_help_oklad_dolg=0x7f070042;
+        public static final int pcalc_help_oklad_zvan=0x7f070041;
+        public static final int pcalc_help_procent_for_pensi=0x7f070045;
+        public static final int pcalc_help_raion_koeff=0x7f070046;
+        public static final int pcalc_help_visl_for_procent_nadbavki=0x7f070044;
+        public static final int pcalc_help_visl_obshe_trud=0x7f070049;
+        public static final int pcalc_nadb=0x7f070035;
+        public static final int pcalc_nadb_100=0x7f07003d;
+        public static final int pcalc_nadb_16=0x7f070040;
+        public static final int pcalc_nadb_17B=0x7f070037;
+        public static final int pcalc_nadb_17B_text=0x7f070038;
+        public static final int pcalc_nadb_32=0x7f07003f;
+        public static final int pcalc_nadb_64=0x7f07003e;
+        public static final int pcalc_nadb_VBD=0x7f070036;
+        public static final int pcalc_nadb_min_pens=0x7f07003c;
+        public static final int pcalc_nadb_raion_koeff=0x7f070025;
+        public static final int pcalc_nadb_raion_koeff_1=0x7f070026;
+        public static final int pcalc_nadb_vet_war=0x7f070024;
+        public static final int pcalc_nadb_visl_for_pensi=0x7f070028;
+        public static final int pcalc_nadbavki=0x7f07002e;
         public static final int pcalc_oklad_dolg=0x7f07001d;
         public static final int pcalc_oklad_zavan=0x7f07001c;
-        public static final int pcalc_oklady=0x7f070029;
-        public static final int pcalc_pod_zago_help=0x7f070038;
-        public static final int pcalc_pod_zago_pay=0x7f070039;
-        public static final int pcalc_pod_zago_vid_pens=0x7f070037;
-        public static final int pcalc_procent_for_ischisl_pensi=0x7f07002b;
-        public static final int pcalc_procent_for_pensi=0x7f070025;
-        public static final int pcalc_rashet_pens=0x7f07002d;
-        public static final int pcalc_razm_min_pensii=0x7f070032;
-        public static final int pcalc_razm_pensii=0x7f070030;
-        public static final int pcalc_razm_pensii_ural_koff=0x7f070031;
-        public static final int pcalc_razm_v_procent=0x7f07002f;
-        public static final int pcalc_result=0x7f070020;
-        public static final int pcalc_result_text=0x7f070021;
-        public static final int pcalc_sum_den_dov_for_isch=0x7f07002e;
-        public static final int pcalc_sum_den_dovi=0x7f070027;
+        public static final int pcalc_oklady=0x7f07002b;
+        public static final int pcalc_pod_zago_help=0x7f07003a;
+        public static final int pcalc_pod_zago_pay=0x7f07003b;
+        public static final int pcalc_pod_zago_vid_pens=0x7f070039;
+        public static final int pcalc_procent_for_ischisl_pensi=0x7f07002d;
+        public static final int pcalc_procent_for_pensi=0x7f070027;
+        public static final int pcalc_raschet_visluga_trud=0x7f070021;
+        public static final int pcalc_rashet_pens=0x7f07002f;
+        public static final int pcalc_razm_min_pensii=0x7f070034;
+        public static final int pcalc_razm_pensii=0x7f070032;
+        public static final int pcalc_razm_pensii_ural_koff=0x7f070033;
+        public static final int pcalc_razm_v_procent=0x7f070031;
+        public static final int pcalc_result=0x7f070022;
+        public static final int pcalc_result_text=0x7f070023;
+        public static final int pcalc_sum_den_dov_for_isch=0x7f070030;
+        public static final int pcalc_sum_den_dovi=0x7f070029;
         public static final int pcalc_visl_for_procent_nadb=0x7f07001e;
-        public static final int pcalc_visluga=0x7f07002a;
-        public static final int quit_button=0x7f07004c;
-        public static final int retry_button=0x7f07004b;
-        public static final int todo=0x7f07004e;
-        public static final int unlicensed_dialog_body=0x7f070048;
-        public static final int unlicensed_dialog_retry_body=0x7f070049;
+        public static final int pcalc_visluga=0x7f07002c;
+        public static final int pcalc_visluga_trud=0x7f070020;
+        public static final int quit_button=0x7f07004f;
+        public static final int retry_button=0x7f07004e;
+        public static final int todo=0x7f070051;
+        public static final int unlicensed_dialog_body=0x7f07004b;
+        public static final int unlicensed_dialog_retry_body=0x7f07004c;
         /**  Unlicensed dialog messages 
          */
-        public static final int unlicensed_dialog_title=0x7f070047;
+        public static final int unlicensed_dialog_title=0x7f07004a;
     }
     public static final class style {
         /** 

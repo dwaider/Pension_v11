@@ -70,7 +70,7 @@ public class PCalcPensNadbDataFragment  extends Fragment {
 		});
        	chVetBoevDest.setChecked(pens.ispVetBoevDeist());
         
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, pens.getpProcentForPensii());
+       	MySppinerAdapterForProcentPens adapter1 = new MySppinerAdapterForProcentPens(getActivity(),pens.getpProcentForPensii());
         Spinner spProcentForPensi = (Spinner) v.findViewById(R.id.spProcentForPensi);
         spProcentForPensi.setAdapter(adapter1);
         spProcentForPensi.setSelection(adapter1.getPosition(String.valueOf(pens.getProcentForPensii())));

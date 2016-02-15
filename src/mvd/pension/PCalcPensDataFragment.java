@@ -15,6 +15,9 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -31,7 +34,10 @@ public class PCalcPensDataFragment extends Fragment {
 	private ImageButton ibtHelp1;
 	private ImageButton ibtHelp2;
 	private ImageButton ibtHelp3;
-	private ImageButton ibtHelp4;	
+	private ImageButton ibtHelp4;
+	private ImageButton ibtHelp6;
+	private CheckBox chSmeshPens;
+	private EditText pObsheTrudVisl;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +56,22 @@ public class PCalcPensDataFragment extends Fragment {
 		pOkladDolg = (EditText)v.findViewById(R.id.edPOklad_dolg);
 		pProcentNadbv = (EditText)v.findViewById(R.id.edPProcent_nadb);
 		pKalendVisl = (EditText)v.findViewById(R.id.edKalendVisl);
-
+		pObsheTrudVisl = (EditText)v.findViewById(R.id.edObsheTrud);
+		pObsheTrudVisl.setEnabled(pens.ispSmeshPens());
+		//расчет по смешанному стажу
+		chSmeshPens = (CheckBox)v.findViewById(R.id.chSmeshPens);
+		chSmeshPens.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+				pens.setpSmeshPens(isChecked);
+				pObsheTrudVisl.setEnabled(pens.ispSmeshPens());
+			}
+		});
+		chSmeshPens.setChecked(pens.ispSmeshPens());
+		
+		
 		// адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, pens.getpZvanOklad());
 		spOkladZvan.setAdapter(adapter);
@@ -75,10 +96,12 @@ public class PCalcPensDataFragment extends Fragment {
 		if (pens.getpOkladDolg() != 0) pOkladDolg.setText(String.valueOf((int)pens.getpOkladDolg()));
 		if (pens.getVislLetPoln() != 0) pProcentNadbv.setText(String.valueOf((int)pens.getVislLetPoln()));
 		if (pens.getpKlandVisl() != 0) pKalendVisl.setText(String.valueOf((int)pens.getpKlandVisl()));
+		if (pens.getpObsheTrudVisl() != 0) pObsheTrudVisl.setText(String.valueOf((int)pens.getpObsheTrudVisl())); 
 		
 		pOkladDolg.addTextChangedListener(new GenericTextWatcher(pOkladDolg));
 		pProcentNadbv.addTextChangedListener(new GenericTextWatcher(pProcentNadbv));
 		pKalendVisl.addTextChangedListener(new GenericTextWatcher(pKalendVisl));
+		pObsheTrudVisl.addTextChangedListener(new GenericTextWatcher(pObsheTrudVisl));
 		pKalendVisl.setOnFocusChangeListener(new GenFocus());
 		OnClickListener d = new View.OnClickListener() {
 			@Override
@@ -98,7 +121,10 @@ public class PCalcPensDataFragment extends Fragment {
 	            	break;	
 		        case R.id.ibtHelp4:
 		        	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_visl_for_procent_nadbavki),getString(R.string.pcalc_visl_for_procent_nadb));
-		        	break;	
+		        	break;
+		        case R.id.ibtHelp6:
+		        	iDialog = DataMessageFragmnet.newInstance(getString(R.string.pcalc_help_visl_obshe_trud),getString(R.string.pcalc_visluga_trud));
+		        	break;
 				}				
 				if (iDialog != null) iDialog.show(fm, DIALOG_DATA);
 			}
@@ -111,7 +137,8 @@ public class PCalcPensDataFragment extends Fragment {
 		ibtHelp3.setOnClickListener(d);
 		ibtHelp4 = (ImageButton)v.findViewById(R.id.ibtHelp4);//выслуга для % надбавки
 		ibtHelp4.setOnClickListener(d);
-		
+		ibtHelp6 = (ImageButton)v.findViewById(R.id.ibtHelp6);//обще трудовой стаж
+		ibtHelp6.setOnClickListener(d);		
 		return v;
 	}	
 	//Declaration
@@ -136,7 +163,10 @@ public class PCalcPensDataFragment extends Fragment {
 			                break;
 			            case R.id.edKalendVisl:
 			                pens.setpKlandVisl(TextToFloat);
-			                break;			                
+			                break;
+			            case R.id.edObsheTrud:
+			            	pens.setpObsheTrudVisl(TextToFloat);
+			            	break;
 		        }
 			} catch (Exception e) {
 				// TODO: handle exception

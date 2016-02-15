@@ -93,10 +93,10 @@ public class PCalcPensResultFragment  extends Fragment {
 							String.format("%.2f",pens.getProcentForPensii()))));
 			txRasmPensii.setText(String.format("%.2f",pens.getpRasmPensii()));
 			txRasmPensiiUchetRaionKoeff.setText(String.format("%.2f",pens.getpRasmPensiiRaionKoeff()));
-			txItog.setText(String.format("%.2f",pens.getpItogSum()));
+			//txItog.setText(String.format("%.2f",pens.getpItogSum()));
 			txItog.setText(String.valueOf(
 					String.format(getResources().getString(R.string.pcalc_result_text),
-							String.format("%.2f",pens.getpItogSum()))));
+							String.format("%.2f",pens.getpItogSum())))+" руб. "+pens.getpDataRashet());
 			txNadb.setText(pens.getpNadbavki_string());
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText,ContentDescription" >
+
 <LinearLayout 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <TextView
@@ -111,19 +113,17 @@
                 android:ems="10"
                 android:hint="@string/pcalc_calend_visluga"
                 android:inputType="number|numberDecimal"
-                android:textSize="@dimen/shrift_size">
+                android:textSize="@dimen/shrift_size" />
 
-                <requestFocus />
-            </EditText>
-           <ImageButton
+            <ImageButton
                 android:id="@+id/ibtHelp3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
+                android:background="@null"
                 android:contentDescription="TODO"
-                android:src="@drawable/help"/>          
+                android:src="@drawable/help" />
 
             <EditText
                 android:id="@+id/edPProcent_nadb"
@@ -135,18 +135,56 @@
                 android:hint="@string/pcalc_visl_for_procent_nadb"
                 android:inputType="number|numberDecimal"
                 android:textSize="@dimen/shrift_size" />
-           <ImageButton
+
+            <ImageButton
                 android:id="@+id/ibtHelp4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
                 android:layout_gravity="left|center"
                 android:layout_weight="0"
+                android:background="@null"
                 android:contentDescription="TODO"
-                android:src="@drawable/help"/>           
+                android:src="@drawable/help" />
+
         </TableRow>
 
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="@dimen/table_margin" >
 
+            <EditText
+                android:id="@+id/edObsheTrud"
+                style="@style/PCalcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/pcalc_visluga_trud"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/shrift_size" />
+
+            <ImageButton
+                android:id="@+id/ibtHelp6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:background="@null"
+                android:contentDescription="TODO"
+                android:src="@drawable/help" />
+
+            <CheckBox
+                android:id="@+id/chSmeshPens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="0"
+                android:text="@string/pcalc_raschet_visluga_trud" />
+
+        </TableRow>
 
     </TableLayout>
 

@@ -18,11 +18,13 @@ public class PCalc{
 	private static final String JSON_OKLAD_DOLGNOST = "dolgnost";
 	private static final String JSON_VISLUGA_NADBF_FOR_VISL = "visluga_for_nadbaf";	
 	private static final String JSON_VISLUGA_KALENDAR = "visluga_kalendar";	
+	private static final String JSON_VISLUGA_OBSHE_TRUD = "visluga_obshe_trud";	
 	private static final String JSON_RAION_KOEFF = "raion_koeff";	
 	private static final String JSON_PROCENT_FOR_PENSII = "procent_for_pensii";	//ограничения для ден дов
 	private static final String JSON_KOLICHESTVO_IGDEV = "kolichestvo_igdev";
 	private static final String JSON_VBD = "vbd";
 	private static final String JSON_PAY_SAVE_NADB = "pay_save_nadb";
+	private static final String JSON_SMESH_PENS = "smesh_pens";
 	
 	private static final String FILENAME = "penscalc.json";
 	
@@ -42,6 +44,7 @@ public class PCalc{
     private float pOkladDolg = 0;
     private float pVislLet = 0;
     private float pKlandVisl = 0;
+    private float pObsheTrudVisl = 0;
     private float pRasmPensiiVProcentah = 0;
     private float pRasVislLet = 0;
     private float pResultPens = 0;
@@ -65,6 +68,8 @@ public class PCalc{
 	private int pKolIgdev = 0;
 	
  	private boolean pBay_save_and_nadbav = false;
+	private boolean pSmeshPens;
+	private String pDataRashet;
 
  	public void setBay_save_and_nadbav(boolean bb){
  		pBay_save_and_nadbav = bb;
@@ -177,10 +182,18 @@ public class PCalc{
 	}
 	private void RaschetRazmPens_v_Procent() {
 		float v = 0;
-		if (pKlandVisl >= 20){
-			v = ((pKlandVisl - 20)*3)+50;
-			if (v > 85) v = 85;
-		};
+		if (!pSmeshPens) { //по выслуге
+			if (pKlandVisl >= 20){
+				v = ((pKlandVisl - 20)*3)+50;
+				if (v > 85) v = 85;
+			};
+		}
+		else
+		{ // по обще трудовому
+			if (pObsheTrudVisl >=25) {
+				v = ((pObsheTrudVisl - 25)) +50; 
+			}
+		}
 		pRasmPensiiVProcentah = v;
 	}
 	
@@ -283,7 +296,6 @@ public class PCalc{
 
 	public void setpVislLet(float pVislLet) {
 		this.pVislLet = pVislLet;
-		
 		RashetAll();
 		notifyListener();
 	}
@@ -301,8 +313,13 @@ public class PCalc{
 	public void setpProcentForPensii(int position) {
 		pProcentForPensiiString = dataPocentForPensi[position].toString();
         String tStr = pProcentForPensiiString;
-		tStr = tStr.substring(tStr.indexOf(";")+1);
-		this.pProcentForPensii = Float.valueOf(tStr);
+		String tDataRashet = tStr.substring(0, tStr.indexOf(";"));
+        tStr = tStr.substring(tStr.indexOf(";")+1);
+		String tProcent = tStr.substring(0, tStr.indexOf(";"));
+		String tRazmMin = tStr.substring(tStr.indexOf(";")+1);
+		this.pDataRashet = tDataRashet;
+		this.pProcentForPensii = Float.valueOf(tProcent);
+		this.RASM_MIN_PENS = Float.valueOf(tRazmMin);
 		RashetAll();
 		notifyListener();
 	}
@@ -316,6 +333,13 @@ public class PCalc{
 		return pProcentForPensii;
 	}
 	
+	/**
+	 * @return the pDataRashet
+	 */
+	public String getpDataRashet() {
+		return pDataRashet;
+	}
+
 	public float getpRaionKoeffRas() {
 		return pRaionKoeffRas;
 	}
@@ -328,6 +352,14 @@ public class PCalc{
 	public float getpSumDenDov() {
 		 RashetAll();
 		 return pSumDenDov;
+	}
+	
+	public float getpObsheTrudVisl() {
+		return pObsheTrudVisl;
+	}
+
+	public void setpObsheTrudVisl(float pObsheTrudVisl) {
+		this.pObsheTrudVisl = pObsheTrudVisl;
 	}
 	
 	public void setpKlandVisl(float pKlandVisl) {
@@ -362,15 +394,28 @@ public class PCalc{
 
 	public void setpVetBoevDeist(boolean pVBD) {
 		pVetBoevDeist = pVBD;
-        if (pVetBoevDeist==true) {
+        RashetAll();
+		notifyListener();
+	}
+
+	public boolean ispSmeshPens() {
+		return pSmeshPens;
+	}
+
+	public void setpSmeshPens(boolean pSmeshPens) {
+		this.pSmeshPens = pSmeshPens;
+        RashetAll();
+		notifyListener();
+	}
+
+	private void RaschetVBD() {
+		if (pVetBoevDeist==true) {
         	 float koeff = Float.valueOf(this.context.getResources().getString(R.string.pcalc_nadb_32));
         	 float pVetBoevDeist_sum = (round(RASM_MIN_PENS * (koeff/100),2));
         	 nNadbavka.put(NADBAVKA_VBD, pVetBoevDeist_sum);
         }
         else 
         	 nNadbavka.delete(NADBAVKA_VBD);
-        RashetAll();
-		notifyListener();
 	}
 	
 	public String getKolIgdevencev(){
@@ -451,6 +496,7 @@ public class PCalc{
 	}
 	
     private void RashetNadavok(){
+    	RaschetVBD();
     	Rascht17B();
     	pNadbSum = 0;
     	for (int i = 0; i < nNadbavka.size(); i++) {
@@ -484,8 +530,10 @@ public class PCalc{
 		json.put(JSON_RAION_KOEFF, pRaionKoeffRas);
 		json.put(JSON_PROCENT_FOR_PENSII, pProcentForPensii);
 		json.put(JSON_VISLUGA_KALENDAR, pKlandVisl);
+		json.put(JSON_VISLUGA_OBSHE_TRUD, pObsheTrudVisl);
 		json.put(JSON_VISLUGA_NADBF_FOR_VISL, pVislLet);
 		json.put(JSON_VBD, pVetBoevDeist);
+		json.put(JSON_SMESH_PENS, pSmeshPens);
 		json.put(JSON_KOLICHESTVO_IGDEV, pKolIgdev);
 		json.put(JSON_OKLAD_ZVAN_STRING,pOkladZvaniString);
 		return json;
@@ -501,6 +549,8 @@ public class PCalc{
 			pKlandVisl = json.getInt(JSON_VISLUGA_KALENDAR);
 			pVislLet = json.getInt(JSON_VISLUGA_NADBF_FOR_VISL);
 			pVetBoevDeist = json.getBoolean(JSON_VBD);
+			pObsheTrudVisl =json.getInt(JSON_VISLUGA_OBSHE_TRUD);
+			pSmeshPens =  json.getBoolean(JSON_SMESH_PENS);
 			pKolIgdev = json.getInt(JSON_KOLICHESTVO_IGDEV);
 			pOkladZvaniString = json.getString(JSON_OKLAD_ZVAN_STRING);
 		}
@@ -523,7 +573,6 @@ public class PCalc{
   			chParam.onChangeParam();
   		}
   	}
-
 
 
 }

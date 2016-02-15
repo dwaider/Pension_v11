@@ -30,7 +30,7 @@
             <TableRow android:id="@+id/tableRow4" >
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/txVal"
                     style="@style/PCalcTextView"
                     android:text="@string/pcalc_oklad_dolg"/>
 
@@ -215,10 +215,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/pcalc_result_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#21ff29"
-            android:textSize="30sp" />
-
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
 </ScrollView>
